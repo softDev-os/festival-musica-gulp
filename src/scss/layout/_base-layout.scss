@@ -1,0 +1,10 @@
+@use "base/variables" as v;
+
+.layout {
+  background: linear-gradient(to bottom, v.$blanco, v.$primario);
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}

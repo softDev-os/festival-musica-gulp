@@ -1,0 +1,87 @@
+@use "base/variables" as v;
+//color/ui color variables
+$white: #ececec;
+$black: #111111;
+$morado1: #473488;
+$morado2: #281c4a;
+$colorPrimary: $morado1;
+$colorSecondary: $morado2;
+$cubic-bezier: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+//split button mixin
+@mixin btn__split($foregroundColor, $backgroundColor, $textColor) {
+  .nav__list .nav__link--contact {
+    margin-left: 5rem;
+    font-weight: 700;
+    //display: block;
+    position: relative;
+    letter-spacing: 2px;
+    color: $textColor;
+    padding: 1rem 2.5rem;
+    font-size: 2.5rem;
+    transition: all 0.5s $cubic-bezier 0.15s;
+    &::after,
+    &::before {
+      border: 0;
+      content: "";
+      position: absolute;
+      height: 40%;
+      width: 10%;
+      transition: all 0.5s $cubic-bezier;
+      z-index: -2;
+      border-radius: 50%;
+      //animation: grow 1s infinite;
+    }
+    &::before {
+      border: 0;
+      background-color: $backgroundColor;
+      top: -0.75rem;
+      left: 0.5rem;
+      animation: topAnimation 2s $cubic-bezier 0.25s infinite alternate;
+    }
+    &::after {
+      background-color: $foregroundColor;
+      top: 3.5rem;
+      left: 13rem;
+      animation: bottomAnimation 2s $cubic-bezier 0.5s infinite alternate;
+    }
+    &:hover {
+      color: white;
+      &::before,
+      &::after {
+        top: 0;
+        //transform: skewx(-10deg);
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        animation: none;
+      }
+      &::after {
+        left: 0rem;
+      }
+      &::before {
+        top: 0.5rem;
+        left: 0.35rem;
+      }
+    }
+  }
+}
+
+@keyframes topAnimation {
+  from {
+    transform: translate(0rem, 0);
+  }
+  to {
+    transform: translate(0rem, 3.5rem);
+  }
+}
+@keyframes bottomAnimation {
+  from {
+    transform: translate(-11.5rem, 0);
+  }
+  to {
+    transform: translate(0rem, 0);
+  }
+}
+
+@include btn__split($colorPrimary, $colorSecondary, $black);

@@ -1,0 +1,84 @@
+@use "base/variables" as v;
+
+.layout__menu {
+  display: flex;
+  position: block;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 15vh;
+  padding: 5rem 0;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+
+  .menu__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+
+    .navbar__link-logo {
+      margin-left: 2rem;
+      font-size: 3.5rem;
+
+      a {
+        color: v.$negro;
+        display: inline-block;
+      }
+    }
+
+    .navbar__nav {
+      width: 50%;
+      margin-top: 1rem;
+
+      .nav__list {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        align-items: baseline;
+
+        .nav__item {
+          .nav__link {
+            padding: 1rem 2.5rem;
+            color: v.$negro;
+            position: relative;
+            display: inline-block;
+            font-weight: 600;
+            animation: enhance-header linear both;
+            animation-timeline: scroll(root block);
+            animation-range: 0 250px;
+
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 50%;
+              left: 0px;
+              width: 100%;
+              height: 1px;
+              background: v.$secundario;
+              display: block;
+              -webkit-transform-origin: left top;
+              -ms-transform-origin: left top;
+              transform-origin: left top;
+              -webkit-transform: scale(0, 1);
+              -ms-transform: scale(0, 1);
+              transform: scale(0, 1);
+              -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+              transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+            }
+            &:hover::before {
+              -webkit-transform-origin: right top;
+              -ms-transform-origin: right top;
+              transform-origin: right top;
+              -webkit-transform: scale(1, 1.4);
+              -ms-transform: scale(1, 1.4);
+              transform: scale(1, 1.4);
+            }
+          }
+        }
+      }
+    }
+  }
+}

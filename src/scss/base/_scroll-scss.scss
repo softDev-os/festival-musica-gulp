@@ -1,0 +1,18 @@
+$sb-track-color: #fff;
+$sb-thumb-color: #a8beeb;
+$sb-thumb: #7a8bda;
+$sb-size: 10px;
+
+.layout {
+  scrollbar-color: $sb-thumb-color $sb-track-color;
+  &::-webkit-scrollbar {
+    width: $sb-size;
+  }
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, $sb-track-color, $sb-thumb-color);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $sb-thumb;
+    border-radius: 10px;
+  }
+}

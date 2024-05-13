@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>Festival de musica</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="build/css/app.css" rel="stylesheet" />
+</head>
+
+<body>
+  <main id="inicio" class="layout">
+    <!--TODO: MENU-->
+    <header class="layout__menu">
+      <div class="menu__navbar">
+        <!--TODO: LOGO-->
+        <h1 class="navbar__link-logo">
+          <a href="#inicio">Rock & EDM Festival</a>
+        </h1>
+
+        <!--TODO: NAV-->
+        <nav class="navbar__nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#lineup" class="nav__link">Line Up</a>
+            </li>
+            <li class="nav__item">
+              <a href="#galeria" class="nav__link">Galeria</a>
+            </li>
+            <li class="nav__item">
+              <a href="#boletos" class="nav__link">Boletos</a>
+            </li>
+            <li class="nav__item--contact">
+              <a href="#contacto" class="nav__link--contact">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--TODO: CONTENIDO DEL BANNER-->
+    <section class="layout__banner">
+      <article class="banner__overlay">
+        <header class="banner__content">
+          <h2 class="banner__title">Rock & EDM Festival</h2>
+          <p class="banner__subtitle">Julio 2022, Guadalajara, México.</p>
+          <a class="banner__btn" href="#">Ver mas eventos</a>
+        </header>
+      </article>
+      <article class="banner__video-container">
+        <video autoplay muted loop class="banner__video">
+          <source src="src/assets/video/concierto.mp4" type="video/mp4" />
+          <source src="src/assets/video/concierto.ogg" type="video/ogg" />
+          <source src="src/assets/video/concierto.webm" type="video/webm" />
+        </video>
+      </article>
+    </section>
+    <section class="layout__content" id="lineup">
+      <article></article>
+    </section>
+  </main>
+</body>
+
+</html>
